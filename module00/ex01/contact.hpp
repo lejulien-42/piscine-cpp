@@ -63,4 +63,33 @@ class	Contact
 				darkest_secret = str;
 		}
 	}
+	public :std::string
+		get_val(int i)
+	{
+		switch(i)
+		{
+			case 0:
+				return(first_name);
+			case 1:
+				return(last_name);
+			case 2:
+				return(nickname);
+			case 3:
+				return(login);
+			case 4:
+				return(postal_addr);
+			case 5:
+				return(email_addr);
+			case 6:
+				return(phone_nbr);
+			case 7:
+				return(b_date);
+			case 8:
+				return(fav_meal);
+			case 9:
+				return(underwear_color);
+			case 10:
+				return(darkest_secret);
+		}
+	}
 };

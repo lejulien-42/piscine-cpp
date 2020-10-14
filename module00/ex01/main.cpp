@@ -77,7 +77,92 @@ void
 	}
 	else
 		print_no_contact();
+}
 
+void
+	print_info(std::string str)
+{
+	if (str.length() == 10)
+		std::cout << str;
+	if (str.length() < 10)
+	{
+		int space = 10 - str.length();
+		while (space > 0)
+		{
+			std::cout << " ";
+			space--;
+		}
+		std::cout << str;
+	}
+	if (str.length() > 10)
+		std::cout << str.substr(0, 9) << ".";
+	std::cout << "|";
+}
+
+void
+	print_line(std::string name, std::string info)
+{
+	int i = 3 + name.length() + info.length();
+	std::cout << "  |" << name << "|";
+	if (i < 45)
+	{
+		int	space = 45 - i;
+		while (space > 0)
+		{
+			std::cout << " ";
+			space--;
+		}
+		std::cout << info;
+	}
+	else if (i > 45)
+	{
+		std::cout << info.substr(0, i - 45) << ".";
+	}
+	else
+		std::cout << info;
+	std::cout << "|\n  |-------------------------------------------|\n";
+}
+
+void
+	search_menu(Contact annuaire[8])
+{
+	std::cout << "  |----------|----------|----------|----------|\n";
+	std::cout << "  |    id    |First name|Last  name|   login  |\n";
+	std::cout << "  |----------|----------|----------|----------|\n";
+	int i = 0;
+	while (annuaire[i].get_it() == 1)
+	{
+		std::cout << "  |         " << i << "|";
+		print_info(annuaire[i].get_val(0));
+		print_info(annuaire[i].get_val(1));
+		print_info(annuaire[i].get_val(3));
+		std::cout << "\n";
+		std::cout << "  |----------|----------|----------|----------|\n";
+		i++;
+	}
+	if (i == 0)
+	{
+		std::cout << "  |              No contact found             |\n";
+		std::cout << "  |-------------------------------------------|\n";
+		return ;
+	}
+	int entry = -1;
+	while (entry < 0 || entry > i - 1)
+	{
+		std::cout << "Which contact you want to see ? [id]\n>> ";
+		std::cin >> entry;
+	}
+	print_line("Fist name", annuaire[entry].get_val(0));
+	print_line("Last name", annuaire[entry].get_val(1));
+	print_line("Nickname", annuaire[entry].get_val(2));
+	print_line("Login", annuaire[entry].get_val(3));
+	print_line("Postal addr.", annuaire[entry].get_val(4));
+	print_line("Email addr.", annuaire[entry].get_val(5));
+	print_line("Phone nbr.", annuaire[entry].get_val(6));
+	print_line("Birthdate", annuaire[entry].get_val(7));
+	print_line("Fav. meal", annuaire[entry].get_val(8));
+	print_line("Underwear color", annuaire[entry].get_val(9));
+	print_line("Darkest secret", annuaire[entry].get_val(10));
 }
 
 int
@@ -86,31 +171,27 @@ int
 	int		con_set = 0;
 	Contact	annuaire[8];
 	bool	is_exit = false;
-	int		menu = 0;
+
 	for (int i = 0; i < 8; i++)
 		annuaire[i].set_it(0);
 
 	while (!is_exit)
 	{
-		if (menu == 0)
-			phone_welcome();
+		phone_welcome();
+		std::cout << ">> ";
 		std::string	typed;
 		typed = "";
 		getline(std::cin, typed);
 		
-		if (menu == 0)
+		if (typed.compare("EXIT") == 0)
 		{
-			if (typed.compare("EXIT") == 0)
-			{
-				std::cout << "Bye ^^\n";
-				return (0);
-			}
-			if (typed.compare("ADD") == 0)
-			{
-				add_menu(annuaire);
-				menu = 0;
-			}
+			std::cout << "Bye ^^\n";
+			return (0);
 		}
+		if (typed.compare("ADD") == 0)
+			add_menu(annuaire);
+		if (typed.compare("SEARCH") == 0)
+			search_menu(annuaire);
 	}
 	return (0);
 }
