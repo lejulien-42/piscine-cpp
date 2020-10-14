@@ -114,9 +114,9 @@ void
 		}
 		std::cout << info;
 	}
-	else if (i > 45)
-		std::cout << info.substr(0, i - 45) << ".";
-	else
+	if (i > 45)
+		std::cout << info.substr(0, 44 - (3 + name.length())) << ".";
+	if (i == 45)
 		std::cout << info;
 	std::cout << "|\n  |-------------------------------------------|\n";
 }

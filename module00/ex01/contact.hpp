@@ -91,5 +91,6 @@ class	Contact
 			case 10:
 				return(darkest_secret);
 		}
+		return (NULL);
 	}
 };
