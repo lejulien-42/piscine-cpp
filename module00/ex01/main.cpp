@@ -115,12 +115,23 @@ void
 		std::cout << info;
 	}
 	else if (i > 45)
-	{
 		std::cout << info.substr(0, i - 45) << ".";
-	}
 	else
 		std::cout << info;
 	std::cout << "|\n  |-------------------------------------------|\n";
+}
+
+int
+	isdigit(std::string str)
+{
+	int i = 0;
+	while (i < str.length())
+	{
+		if (str[i] < '0' || str[i] > '9')
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 void
@@ -146,12 +157,17 @@ void
 		std::cout << "  |-------------------------------------------|\n";
 		return ;
 	}
-	int entry = -1;
+	int		entry = -1;
+	std::string	entry_str = "";
 	while (entry < 0 || entry > i - 1)
 	{
 		std::cout << "Which contact you want to see ? [id]\n>> ";
-		std::cin >> entry;
+		entry_str = "";
+		getline(std::cin, entry_str);
+		if (isdigit(entry_str) != 0 && entry_str.length() < 3)
+			entry = std::stoi(entry_str);
 	}
+	std::cout << "  |-------------------------------------------|\n";
 	print_line("Fist name", annuaire[entry].get_val(0));
 	print_line("Last name", annuaire[entry].get_val(1));
 	print_line("Nickname", annuaire[entry].get_val(2));
