@@ -13,3 +13,9 @@ void
 {
 	std::cout << "<" << this->name << " (" << this->type << ")> Braiiiiiiinnnnss ...\n";
 }
+
+void
+	Zombie::announce()
+{
+	std::cout << "[" << this->name << "] I need brains !!!!!\n";
+}

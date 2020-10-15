@@ -20,10 +20,12 @@ int
 	Zombie	*z[nbr];
 	int i=0;
 
+
 	while (i < nbr)
 	{
 		z[i] = randomChump();
 		z[i]->advert();
+		z[i]->announce();
 		delete z[i];
 		i++;
 	}

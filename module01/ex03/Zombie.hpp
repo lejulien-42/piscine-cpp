@@ -12,4 +12,5 @@ class
 	public:
 		Zombie(std::string name, std::string type);
 		void	advert();
+		void	announce();
 };
