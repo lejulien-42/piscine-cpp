@@ -9,13 +9,13 @@
 void
 	Contact::set_it(int i)
 {
-	is_set = i;
+	this->is_set = i;
 }
 
 int
 	Contact::get_it()
 {
-	return (is_set);
+	return (this->is_set);
 }
 
 void
@@ -24,27 +24,27 @@ void
 	switch(i)
 	{
 		case 0:
-			first_name = str;
+			this->first_name = str;
 		case 1:
-			last_name = str;
+			this->last_name = str;
 		case 2:
-			nickname = str;
+			this->nickname = str;
 		case 3:
-			login = str;
+			this->login = str;
 		case 4:
-			postal_addr = str;
+			this->postal_addr = str;
 		case 5:
-			email_addr = str;
+			this->email_addr = str;
 		case 6:
-			phone_nbr = str;
+			this->phone_nbr = str;
 		case 7:
-			b_date = str;
+			this->b_date = str;
 		case 8:
-			fav_meal = str;
+			this->fav_meal = str;
 		case 9:
-			underwear_color = str;
+			this->underwear_color = str;
 		case 10:
-			darkest_secret = str;
+			this->darkest_secret = str;
 	}
 }
 
@@ -54,27 +54,27 @@ std::string
 	switch(i)
 	{
 		case 0:
-			return(first_name);
+			return(this->first_name);
 		case 1:
-			return(last_name);
+			return(this->last_name);
 		case 2:
-			return(nickname);
+			return(this->nickname);
 		case 3:
-			return(login);
+			return(this->login);
 		case 4:
-			return(postal_addr);
+			return(this->postal_addr);
 		case 5:
-			return(email_addr);
+			return(this->email_addr);
 		case 6:
-			return(phone_nbr);
+			return(this->phone_nbr);
 		case 7:
-			return(b_date);
+			return(this->b_date);
 		case 8:
-			return(fav_meal);
+			return(this->fav_meal);
 		case 9:
-			return(underwear_color);
+			return(this->underwear_color);
 		case 10:
-			return(darkest_secret);
+			return(this->darkest_secret);
 	}
 	return (NULL);
 }

@@ -1,4 +1,5 @@
-void memoryLeak()
+#include <iostream>
+void memoryLeak();
 
 void		memoryLeak()
 {
