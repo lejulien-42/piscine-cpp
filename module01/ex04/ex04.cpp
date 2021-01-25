@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.cpp                                           :+:      :+:    :+:   */
+/*   ex04.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lejulien <lejulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/25 12:23:45 by lejulien          #+#    #+#             */
-/*   Updated: 2021/01/25 12:24:05 by lejulien         ###   ########.fr       */
+/*   Created: 2021/01/25 14:20:20 by lejulien          #+#    #+#             */
+/*   Updated: 2021/01/25 14:30:02 by lejulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Pony.hpp"
+#include <string>
 
-Pony::~Pony()
+int
+	main()
 {
-	std::cout << "This pony is dead\n";
-}
+	std::string s = "HI THIS IS BRAIN";
 
-void Pony::born()
-{
-	std::cout << "A new pony is born\n";
-}
+	std::string *ptr = &s;
 
-void Pony::eat()
-{
-	std::cout << "The pony eat some weats\n";
-}
-
-void Pony::run()
-{
-	std::cout << "Look at him go this pony is so fast\n";
+	std::cout << *ptr;
 }

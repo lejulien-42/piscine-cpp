@@ -1,11 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lejulien <lejulien@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/25 12:28:31 by lejulien          #+#    #+#             */
+/*   Updated: 2021/01/25 14:14:29 by lejulien         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include "ZombieHorde.hpp"
 
 int
 	main()
 {
-	ZombieHorde	z(6);
-
-//	z.announce();
+	ZombieHorde		z(50);
+	z.announce();
 	return (0);
 }
