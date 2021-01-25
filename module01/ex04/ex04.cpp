@@ -6,7 +6,7 @@
 /*   By: lejulien <lejulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 14:20:20 by lejulien          #+#    #+#             */
-/*   Updated: 2021/01/25 14:30:02 by lejulien         ###   ########.fr       */
+/*   Updated: 2021/01/25 14:46:38 by lejulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,8 @@ int
 
 	std::string *ptr = &s;
 
+	std::string &reff = s;
+
 	std::cout << *ptr;
+	std::cout << *&reff;
 }
