@@ -170,8 +170,11 @@ void
 		std::cout << "Which contact you want to see ? [id]\n>> ";
 		entry_str = "";
 		getline(std::cin, entry_str);
-		if (isdigit(entry_str) != 0 && entry_str.length() < 3)
-			entry = std::stoi(entry_str);
+		if (entry_str.length() > 0)
+		{
+			if (isdigit(entry_str) != 0 && entry_str.length() < 3)
+				entry = std::stoi(entry_str);
+		}
 	}
 	std::cout << "  |-------------------------------------------|\n";
 	print_line("Fist name", annuaire[entry].get_val(0));

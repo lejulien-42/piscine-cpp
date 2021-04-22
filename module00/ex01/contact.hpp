@@ -17,22 +17,22 @@
 class	Contact
 {
 	private:
-		int			is_set;
-		std::string	first_name;
-		std::string	last_name;
-		std::string	nickname;
-		std::string	login;
-		std::string	postal_addr;
-		std::string	email_addr;
-		std::string	phone_nbr;
-		std::string	b_date;
-		std::string	fav_meal;
-		std::string	underwear_color;
-		std::string	darkest_secret;
+		int			_is_set;
+		std::string	_first_name;
+		std::string	_last_name;
+		std::string	_nickname;
+		std::string	_login;
+		std::string	_postal_addr;
+		std::string	_email_addr;
+		std::string	_phone_nbr;
+		std::string	_b_date;
+		std::string	_fav_meal;
+		std::string	_underwear_color;
+		std::string	_darkest_secret;
 
 	public :
 		void		set_it(int i);
-		int			get_it();
+		int			get_it() const;
 		void		set_val(std::string str, int i);
-		std::string	get_val(int i);
+		std::string	get_val(int i) const;
 };
