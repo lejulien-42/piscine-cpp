@@ -17,7 +17,5 @@
 std::string
 	Brain::identifier()
 {
-	std::stringstream	ss;
-	ss << this;
-	return (ss.str());
+	return (this->_address);
 }

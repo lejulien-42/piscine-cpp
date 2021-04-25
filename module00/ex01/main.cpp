@@ -51,7 +51,7 @@ std::string
 	set_info(std::string str, int i)
 {
 	std::string	entry = "";
-	while (entry == "")
+	while (entry == "" && !std::cin.eof())
 	{
 		std::cout << str << ">> ";
 		getline(std::cin, entry);
@@ -165,7 +165,7 @@ void
 	}
 	int		entry = -1;
 	std::string	entry_str = "";
-	while (entry < 0 || entry > i - 1)
+	while ((entry < 0 || entry > i - 1) && !std::cin.eof())
 	{
 		std::cout << "Which contact you want to see ? [id]\n>> ";
 		entry_str = "";
@@ -176,6 +176,8 @@ void
 				entry = std::stoi(entry_str);
 		}
 	}
+	if (std::cin.eof())
+	    return ;
 	std::cout << "  |-------------------------------------------|\n";
 	print_line("Fist name", annuaire[entry].get_val(0));
 	print_line("Last name", annuaire[entry].get_val(1));
@@ -199,7 +201,7 @@ int
 	for (int i = 0; i < 8; i++)
 		annuaire[i].set_it(0);
 
-	while (!is_exit)
+	while (!is_exit && !std::cin.eof())
 	{
 		phone_welcome();
 		std::cout << ">> ";
