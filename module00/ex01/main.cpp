@@ -193,7 +193,6 @@ void
 int
 	main()
 {
-	int		con_set = 0;
 	Contact	annuaire[8];
 	bool	is_exit = false;
 
@@ -211,7 +210,7 @@ int
 		if (typed.compare("EXIT") == 0)
 		{
 			std::cout << "Bye ^^\n";
-			return (0);
+			is_exit = true;
 		}
 		if (typed.compare("ADD") == 0)
 			add_menu(annuaire);
