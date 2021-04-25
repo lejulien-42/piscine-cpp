@@ -84,4 +84,3 @@ std::string
 	}
 	return (NULL);
 }
-

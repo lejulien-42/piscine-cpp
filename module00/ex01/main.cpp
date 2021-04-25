@@ -17,7 +17,7 @@
 void
 	phone_welcome()
 {
-	std::cout << "|-----------------------------------------------|\n";
+	std::cout << "/-----------------------------------------------\\\n";
 	std::cout << "|                                               |\n";
 	std::cout << "|             Welcome to the Phonebook          |\n";
 	std::cout << "|                                               |\n";
@@ -27,28 +27,28 @@ void
 	std::cout << "|  -SEARCH : Search a contact                   |\n";
 	std::cout << "|-----------------------------------------------|\n";
 	std::cout << "|  -EXIT   : Close the Phonebook                |\n";
-	std::cout << "|-----------------------------------------------|\n";
+	std::cout << "\\-----------------------------------------------/\n";
 }
 
 void
 	print_add_menu()
 {
-	std::cout << "|-----------------------------------------------|\n";
+	std::cout << "/-----------------------------------------------\\\n";
 	std::cout << "|             Please enter all fields           |\n";
-	std::cout << "|-----------------------------------------------|\n";
+	std::cout << "\\-----------------------------------------------/\n";
 }
 
 void
 	print_no_contact()
 {
-	std::cout << "|-----------------------------------------------|\n";
+	std::cout << "/-----------------------------------------------\\\n";
 	std::cout << "|           No space left for new contacts      |\n";
-	std::cout << "|-----------------------------------------------|\n";
+	std::cout << "\\-----------------------------------------------/\n";
 	
 }
 
 std::string
-	set_info(std::string str, int i)
+	set_info(std::string str)
 {
 	std::string	entry = "";
 	while (entry == "" && !std::cin.eof())
@@ -68,17 +68,17 @@ void
 	if (i < 8)
 	{
 		print_add_menu();
-		annuaire[i].set_val(set_info("First name\n", i), 0);
-		annuaire[i].set_val(set_info("Last name\n", i), 1);
-		annuaire[i].set_val(set_info("Nickname\n", i), 2);
-		annuaire[i].set_val(set_info("Login\n", i), 3);
-		annuaire[i].set_val(set_info("Postal address\n", i), 4);
-		annuaire[i].set_val(set_info("Email address\n", i), 5);
-		annuaire[i].set_val(set_info("Phone number\n", i), 6);
-		annuaire[i].set_val(set_info("Birthday\n", i), 7);
-		annuaire[i].set_val(set_info("Favorite meal\n", i), 8);
-		annuaire[i].set_val(set_info("Underwear color\n", i), 9);
-		annuaire[i].set_val(set_info("Darkest secret\n", i), 10);
+		annuaire[i].set_val(set_info("First name\n"), 0);
+		annuaire[i].set_val(set_info("Last name\n"), 1);
+		annuaire[i].set_val(set_info("Nickname\n"), 2);
+		annuaire[i].set_val(set_info("Login\n"), 3);
+		annuaire[i].set_val(set_info("Postal address\n"), 4);
+		annuaire[i].set_val(set_info("Email address\n"), 5);
+		annuaire[i].set_val(set_info("Phone number\n"), 6);
+		annuaire[i].set_val(set_info("Birthday\n"), 7);
+		annuaire[i].set_val(set_info("Favorite meal\n"), 8);
+		annuaire[i].set_val(set_info("Underwear color\n"), 9);
+		annuaire[i].set_val(set_info("Darkest secret\n"), 10);
 		annuaire[i].set_it(1);
 	}
 	else
@@ -130,7 +130,7 @@ void
 int
 	isdigit(std::string str)
 {
-	int i = 0;
+	unsigned long i = 0;
 	while (i < str.length())
 	{
 		if (str[i] < '0' || str[i] > '9')
@@ -143,9 +143,9 @@ int
 void
 	search_menu(Contact annuaire[8])
 {
-	std::cout << "  |----------|----------|----------|----------|\n";
+	std::cout << "  /----------|----------|----------|----------\\\n";
 	std::cout << "  |    id    |First name|Last  name|   login  |\n";
-	std::cout << "  |----------|----------|----------|----------|\n";
+	std::cout << "  \\----------|----------|----------|----------/\n";
 	int i = 0;
 	while (annuaire[i].get_it() == 1)
 	{
@@ -178,7 +178,7 @@ void
 	}
 	if (std::cin.eof())
 	    return ;
-	std::cout << "  |-------------------------------------------|\n";
+	std::cout << "  /-------------------------------------------\\\n";
 	print_line("Fist name", annuaire[entry].get_val(0));
 	print_line("Last name", annuaire[entry].get_val(1));
 	print_line("Nickname", annuaire[entry].get_val(2));
