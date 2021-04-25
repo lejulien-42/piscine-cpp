@@ -15,18 +15,18 @@
 
 Zombie::Zombie(std::string name, std::string type)
 {
-	this->name = name;
-	this->type = type;
+	this->_name = name;
+	this->_type = type;
 }
 
 void
 	Zombie::advert()
 {
-	std::cout << "<" << this->name << " (" << this->type << ")> Braiiiiiiinnnnss ...\n";
+	std::cout << "<" << this->_name << " (" << this->_type << ")> Braiiiiiiinnnnss ...\n";
 }
 
 void
 	Zombie::announce()
 {
-	std::cout << "[" << this->name << "] I need brains !!!!!\n";
+	std::cout << "[" << this->_name << "] I need brains !!!!!\n";
 }

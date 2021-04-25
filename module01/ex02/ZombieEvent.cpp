@@ -17,12 +17,12 @@
 void
 	ZombieEvent::setZombieType(std::string type)
 {
-	this->type = type;
+	this->_type = type;
 }
 
 Zombie
 	*ZombieEvent::newZombie(std::string name)
 {
-	Zombie	*z = new Zombie(name, this->type);
+	Zombie	*z = new Zombie(name, this->_type);
 	return (z);
 }

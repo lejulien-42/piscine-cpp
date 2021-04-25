@@ -4,36 +4,36 @@
 
 Zombie::Zombie()
 {
-	this->name = "Empty";
-	this->type = "Empty";
+	this->_name = "Empty";
+	this->_type = "Empty";
 }
 
 Zombie::Zombie(std::string name, std::string type)
 {
-	this->name = name;
-	this->type = type;
+	this->_name = name;
+	this->_type = type;
 }
 
 void
 	Zombie::SetName(std::string name)
 {
-	this->name = name;
+	this->_name = name;
 }
 
 void
 	Zombie::SetType(std::string type)
 {
-	this->type = type;
+	this->_type = type;
 }
 
 void
-	Zombie::advert()
+	Zombie::advert() const
 {
-	std::cout << "<" << this->name << " (" << this->type << ")> Braiiiiiiinnnnss ...\n";
+	std::cout << "<" << this->_name << " (" << this->_type << ")> Braiiiiiiinnnnss ...\n";
 }
 
 void
-	Zombie::announce()
+	Zombie::announce() const
 {
-	std::cout << "[" << this->name << "] I need brains !!!!!\n";
+	std::cout << "[" << this->_name << "] I need brains !!!!!\n";
 }

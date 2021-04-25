@@ -6,10 +6,10 @@ class
 	ZombieHorde
 {
 	private:
-		int		nbrOfZombie;
-		Zombie	*horde;
+		int		_nbrOfZombie;
+		Zombie	*_horde;
 	public:
 		ZombieHorde(const int n);
 		~ZombieHorde();
-		void	announce();
+		void	announce() const;
 };

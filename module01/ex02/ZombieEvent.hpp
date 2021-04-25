@@ -17,7 +17,7 @@ class
 	ZombieEvent
 {
 	private:
-		std::string	type;
+		std::string	_type;
 
 	public:
 		void	setZombieType(std::string type);

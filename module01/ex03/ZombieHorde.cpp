@@ -20,17 +20,17 @@ ZombieHorde::ZombieHorde(const int n)
 		randomChump(&horde[i]);
 		i++;
 	}
-	this->horde = horde;
-	this->nbrOfZombie = n;
+	this->_horde = horde;
+	this->_nbrOfZombie = n;
 }
 
 ZombieHorde::~ZombieHorde()
 {
-	delete[] this->horde;
+	delete[] this->_horde;
 }
 
-void	ZombieHorde::announce()
+void	ZombieHorde::announce() const
 {
-	for (int i = 0; i < this->nbrOfZombie; i++)
-		this->horde[i].announce();
+	for (int i = 0; i < this->_nbrOfZombie; i++)
+		this->_horde[i].announce();
 }

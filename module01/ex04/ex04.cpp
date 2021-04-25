@@ -22,6 +22,5 @@ int
 
 	std::string &reff = s;
 
-	std::cout << *ptr;
-	std::cout << *&reff;
+	std::cout << "string from ptr : " << *ptr << std::endl << "string from reference : " << reff << std::endl;
 }

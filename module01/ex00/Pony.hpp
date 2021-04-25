@@ -16,7 +16,7 @@ class	Pony
 {
 	public:
 		~Pony();
-		void born();
-		void eat();
-		void run();
+		void born() const;
+		void eat() const;
+		void run() const;
 };

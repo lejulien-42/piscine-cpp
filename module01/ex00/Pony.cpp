@@ -18,17 +18,17 @@ Pony::~Pony()
 	std::cout << "This pony is dead\n";
 }
 
-void Pony::born()
+void Pony::born() const
 {
 	std::cout << "A new pony is born\n";
 }
 
-void Pony::eat()
+void Pony::eat() const
 {
 	std::cout << "The pony eat some weats\n";
 }
 
-void Pony::run()
+void Pony::run() const
 {
-	std::cout << "Look at him go this pony is so fast\n";
+	std::cout << "Look at him go this pony is running so fast\n";
 }

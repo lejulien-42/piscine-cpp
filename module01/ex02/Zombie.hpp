@@ -17,8 +17,8 @@ class
 	Zombie
 {
 	private:
-		std::string	name;
-		std::string	type;
+		std::string	_name;
+		std::string	_type;
 
 	public:
 		Zombie(std::string name, std::string type);
