@@ -1,30 +1,14 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Human.cpp                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lejulien <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/27 11:55:47 by lejulien          #+#    #+#             */
-/*   Updated: 2021/01/27 12:23:59 by lejulien         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+//
+// Created by Leo JULIEN on 4/25/21.
+//
 
-#include "Brain.hpp"
 #include "Human.hpp"
-#include <string>
-#include <sstream>
 
-std::string
-	Human::identifier()
+std::string Human::identify()
 {
-	Brain *b = (Brain *)this->brain;
-	Brain c = *b;
-	return (c.identifier());
+    return (this->b.identify());
 }
 
-Brain
-	Human::getBrain()
-{
-	return (*this->brain);
+Brain&  Human::getBrain(){
+    return (this->b);
 }

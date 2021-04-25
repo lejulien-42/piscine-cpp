@@ -15,7 +15,9 @@
 #include "Brain.hpp"
 
 std::string
-	Brain::identifier()
+	Brain::identify() const
 {
-	return (this->_address);
+    std::ostringstream res;
+    res << (void const *)this;
+	return (res.str());
 }

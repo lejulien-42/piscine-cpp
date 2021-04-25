@@ -17,8 +17,8 @@
 int
 	main()
 {
-	Human	billy;
+    Human	billy;
 
-	std::cout << billy.identifier() << std::endl;
-	std::cout << billy.getBrain().identifier() << std::endl;
+    std::cout << billy.identify() << std::endl;
+    std::cout << billy.getBrain().identify() << std::endl;
 }

@@ -16,9 +16,6 @@
 class
 	Brain
 {
-    private:
-        std::string _address = std::this;
 	public:
-        Brain();
-		std::string identifier();
+		std::string identify() const;
 };
