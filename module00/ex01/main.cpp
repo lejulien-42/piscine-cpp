@@ -173,7 +173,7 @@ void
 		if (entry_str.length() > 0)
 		{
 			if (isdigit(entry_str) != 0 && entry_str.length() < 3)
-				entry = std::stoi(entry_str);
+				entry = atol(entry_str.c_str());
 		}
 	}
 	if (std::cin.eof())
