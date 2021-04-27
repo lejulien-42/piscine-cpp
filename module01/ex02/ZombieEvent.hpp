@@ -20,6 +20,7 @@ class
 		std::string	_type;
 
 	public:
+        ZombieEvent();
 		void	setZombieType(std::string type);
 		Zombie	*newZombie(std::string name);
 };

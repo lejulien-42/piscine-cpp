@@ -14,6 +14,8 @@
 #include "ZombieEvent.hpp"
 #include <iostream>
 
+ZombieEvent::ZombieEvent(): _type("no_event") {}
+
 void
 	ZombieEvent::setZombieType(std::string type)
 {

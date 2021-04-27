@@ -1,5 +1,5 @@
 //
-// Created by Leo JULIEN on 4/27/21.
+// -Created by Leo JULIEN on 4/27/21-
 //
 
 #include <iostream>
@@ -21,7 +21,7 @@ char
 
 void    set_header(std::ofstream &output)
 {
-    output << "//" << std::endl << "// Created by lejulien @ 42" << std::endl << "//" << std::endl << std::endl;
+    output << "//" << std::endl << "// -Created by lejulien @ 42-" << std::endl << "//" << std::endl << std::endl;
 }
 
 void    set_footer(std::ofstream &output)
@@ -55,15 +55,18 @@ int main(int ac, char **av)
         output_hpp << "class " << name << std::endl << "{" << std::endl;
 
         output_hpp << "public:" << std::endl;
-        output_hpp << "\t" << name << "( void );" << std::endl;
-        output_hpp << "\t" << name << "( " << name << " const & src );" << std::endl;
-        output_hpp << "\t~" << name << "( void );" << std::endl << std::endl;
-        output_hpp << "\t" << name << " &\toperator=( " << av[1] << " const & rhs );" << std::endl << std::endl;
+        output_hpp << "\t" << name << "(void);" << std::endl;
+        output_hpp << "\t" << name << "(" << name << " const & src);" << std::endl;
+        output_hpp << "\t~" << name << "(void);" << std::endl;
+        output_hpp << "\t" << name << " &\toperator=(" << name << " const & rhs);" << std::endl;
+        output_hpp << "\tint\tgetFoo(void) const;" << std::endl;
         output_hpp << "private:" << std::endl;
         output_hpp << "\tint\t_foo;" << std::endl;
 
         // ending the class
         output_hpp << "};" << std::endl;
+
+        output_hpp << std::endl << "#endif" << std::endl;
 
         set_footer(output_hpp);
 
@@ -82,15 +85,18 @@ int main(int ac, char **av)
         output_cpp << "#include <iostream>" << std::endl << "#include \"" << name << ".hpp\"" << std::endl << std::endl;
 
         // starting canonical declarations
-        output_cpp << name << "::" << name << "( void )" << std::endl << "{}" << std::endl << std::endl;
+        output_cpp << name << "::" << name << "(void)" << std::endl << "{}" << std::endl << std::endl;
 
-        output_cpp << name << "::~" << name << "( void )" << std::endl << "{}" << std::endl << std::endl;
-
-        output_cpp << name << "::" << name << "( " << name << " const & srcs )" << std::endl << "{" << std::endl;
+        output_cpp << name << "::" << name << "(" << name << " const & src)" << std::endl << "{" << std::endl;
         output_cpp << "\t*this = src;" << std::endl << "\treturn ;" << std::endl << "}" << std::endl <<std::endl;
 
-        output_cpp << name << "&\t" << name << "::operator=( " << name << " const & rhs )" << std::endl << "{" << std::endl;
-        output_cpp << "\tif ( this != &rhs )" << std::endl << "\t\tthis->_foo = rhs.getFoo();" << std::endl << "}" << std::endl;
+        output_cpp << name << "::~" << name << "(void)" << std::endl << "{}" << std::endl << std::endl;
+
+        output_cpp << "int\t" << name << "::getFoo(void) const" << std::endl << "{" << std::endl << "\treturn this->_foo;" << std::endl;
+        output_cpp << "}" <<  std::endl << std::endl;
+
+        output_cpp << name << "&\t" << name << "::operator=(" << name << " const & rhs)" << std::endl << "{" << std::endl;
+        output_cpp << "\tif (this != &rhs)" << std::endl << "\t\tthis->_foo = rhs.getFoo();" << std::endl << "\treturn *this" << std::endl << "}" << std::endl;
 
         set_footer(output_cpp);
 

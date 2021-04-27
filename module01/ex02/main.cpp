@@ -14,13 +14,14 @@
 #include "Zombie.hpp"
 #include "ZombieEvent.hpp"
 
-Zombie
-	*randomChump()
+void randomChump()
 {
 	ZombieEvent		zevent;
 	zevent.setZombieType("random");
-	const char	*names[10] = { "Robert", "Groot", "Sonic", "Naruto", "Brigitte", "Martine", "Ton pere", "Francois", "Manu", "Patate"};
+	const char	*names[10] = { "Robert", "Groot", "Sonic", "Naruto", "Brigitte", "Martine", "Ton pere", "Francois-Louis", "Manu", "Patate"};
 	Zombie	*z= zevent.newZombie(names[std::rand() % 10]);
+	z->announce();
+    delete z[i];
 	return (z);
 }
 
@@ -34,10 +35,7 @@ int
 
 	while (i < nbr)
 	{
-		z[i] = randomChump();
-		z[i]->advert();
-		z[i]->announce();
-		delete z[i];
+		randomChump();
 		i++;
 	}
 	return (0);
