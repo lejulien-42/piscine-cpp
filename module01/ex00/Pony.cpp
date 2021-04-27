@@ -15,20 +15,22 @@
 
 Pony::~Pony()
 {
-	std::cout << "This pony is dead\n";
+	std::cout << "This " << this->_color << " pony is dead\n";
 }
+
+Pony::Pony(std::string color): _color(color) {}
 
 void Pony::born() const
 {
-	std::cout << "A new pony is born\n";
+	std::cout << "A new " << this->_color << " pony is born\n";
 }
 
 void Pony::eat() const
 {
-	std::cout << "The pony eat some weats\n";
+	std::cout << "The " << this->_color << " pony eat some weats\n";
 }
 
 void Pony::run() const
 {
-	std::cout << "Look at him go this pony is running so fast\n";
+	std::cout << "Look at him go this " << this->_color << " pony is running so fast\n";
 }

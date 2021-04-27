@@ -11,12 +11,16 @@
 /* ************************************************************************** */
 
 #pragma once
+#include <iostream>
 
 class	Pony
 {
 	public:
+		Pony(std::string color);
 		~Pony();
 		void born() const;
 		void eat() const;
 		void run() const;
+    private:
+        std::string _color;
 };

@@ -17,7 +17,7 @@ void
 	ponyOnTheStack()
 {
 	std::cout << "This is the pony on the stack :\n";
-	Pony	p;
+	Pony	p(std::string("white"));
 	p.born();
 	p.eat();
 }
@@ -26,7 +26,7 @@ void
 	ponyOnTheHeap()
 {
 	std::cout << "This is the pony on the heap :\n";
-	Pony	*p = new Pony;
+	Pony	*p = new Pony(std::string("brown"));
 	p->born();
 	p->run();
 	delete p;
