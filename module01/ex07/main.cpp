@@ -35,8 +35,13 @@ int main(int ac, char **av)
             output_path.append(".replace");
             std::ofstream outfile(output_path);
 
-            while (out_text.find(from) != std::string::npos)
-                out_text.replace(out_text.find(from), from.length(), to);
+            int where = 0;
+            int size_get;
+            while ((size_get = out_text.find(from, where)) != std::string::npos)
+            {
+                out_text.replace(out_text.find(from, where), from.length(), to);
+                where = size_get + to.length();
+            }
 
             //apply string to output file
 
@@ -44,9 +49,9 @@ int main(int ac, char **av)
             outfile.close();
         }
         else
-            std::cout << "Usage : ./replace FILENAME s1 s2" << std::endl;
+            std::cout << "Usage : ./replace FILENAME from to" << std::endl;
     }
     else
-        std::cout << "Usage : ./replace FILENAME s1 s2" << std::endl;
+        std::cout << "Usage : ./replace FILENAME from to" << std::endl;
     return 0;
 }
