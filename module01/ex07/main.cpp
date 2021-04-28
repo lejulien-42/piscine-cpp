@@ -27,7 +27,7 @@ int main(int ac, char **av)
         // replace
         std::string from = std::string(av[2]);
         std::string to = std::string(av[3]);
-        if (from != "") {
+        if (from != "" && from != to) {
 
             // open output file
 
