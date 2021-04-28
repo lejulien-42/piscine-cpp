@@ -21,15 +21,13 @@ void randomChump()
 	const char	*names[10] = { "Robert", "Groot", "Sonic", "Naruto", "Brigitte", "Martine", "Ton pere", "Francois-Louis", "Manu", "Patate"};
 	Zombie	*z= zevent.newZombie(names[std::rand() % 10]);
 	z->announce();
-    delete z[i];
-	return (z);
+    delete z;
 }
 
 int
 	main()
 {
-	const int nbr = 20;
-	Zombie	*z[nbr];
+	const int nbr = 5;
 	int i=0;
 
 

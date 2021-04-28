@@ -12,6 +12,7 @@ class
 	public:
 		Zombie(std::string name, std::string type);
 		Zombie();
+		~Zombie();
 		void	advert() const;
 		void	announce() const;
 		void	SetName(std::string name);

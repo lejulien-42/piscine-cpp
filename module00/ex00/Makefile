@@ -14,8 +14,6 @@ SRCS	= ./megaphone.cpp
 
 NAME	= megaphone
 
-ClANG	= clang++
-
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 
 OBJS	= $(SRCS:.cpp=.o)
@@ -36,4 +34,4 @@ fclean: clean
 re: fclean all
 
 .cpp.o:
-	$(CLANG) -c $<  -o $(<:.cpp=.o)
+	clang++ -c $<  -o $(<:.cpp=.o)

@@ -16,7 +16,7 @@
 int
 	main()
 {
-	ZombieHorde		z(50);
+	ZombieHorde		z(5);
 	z.announce();
 	return (0);
 }

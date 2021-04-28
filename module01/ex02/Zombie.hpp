@@ -22,5 +22,6 @@ class
 
 	public:
 		Zombie(std::string name, std::string type);
+		~Zombie();
 		void	announce();
 };
