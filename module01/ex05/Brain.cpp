@@ -19,5 +19,7 @@ std::string
 {
     std::ostringstream res;
     res << (void const *)this;
-	return (res.str());
+	return (
+
+	        );
 }
