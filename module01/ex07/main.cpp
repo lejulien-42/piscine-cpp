@@ -41,6 +41,7 @@ int main(int ac, char **av)
             //apply string to output file
 
             outfile << out_text;
+            outfile.close();
         }
         else
             std::cout << "Usage : ./replace FILENAME s1 s2" << std::endl;
