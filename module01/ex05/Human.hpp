@@ -9,10 +9,10 @@
 
 class Human {
 private:
-    Brain b;
+    const Brain b;
 public:
-    Brain       &getBrain();
-    std::string identify();
+    const Brain       &getBrain() const;
+    std::string identify() const;
 };
 
 

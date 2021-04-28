@@ -4,11 +4,11 @@
 
 #include "Human.hpp"
 
-std::string Human::identify()
+std::string Human::identify() const
 {
     return (this->b.identify());
 }
 
-Brain&  Human::getBrain(){
+const Brain&  Human::getBrain() const{
     return (this->b);
 }
