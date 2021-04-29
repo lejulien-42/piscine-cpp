@@ -6,7 +6,7 @@
 /*   By: lejulien <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 10:55:55 by lejulien          #+#    #+#             */
-/*   Updated: 2021/01/27 12:16:18 by lejulien         ###   ########.fr       */
+/*   Updated: 2021/04/29 14:19:58 by lejulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,5 @@ std::string
 {
     std::ostringstream res;
     res << (void const *)this;
-	return (
-
-	        );
+	return (res.str());
 }
