@@ -96,7 +96,7 @@ int main(int ac, char **av)
         output_cpp << "}" <<  std::endl << std::endl;
 
         output_cpp << name << "&\t" << name << "::operator=(" << name << " const & rhs)" << std::endl << "{" << std::endl;
-        output_cpp << "\tif (this != &rhs)" << std::endl << "\t\tthis->_foo = rhs.getFoo();" << std::endl << "\treturn *this" << std::endl << "}" << std::endl;
+        output_cpp << "\tif (this != &rhs)" << std::endl << "\t\tthis->_foo = rhs.getFoo();" << std::endl << "\treturn *this;" << std::endl << "}" << std::endl;
 
         set_footer(output_cpp);
 
