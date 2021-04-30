@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cstdlib>
 #include "Zombie.hpp"
 #include "ZombieEvent.hpp"
 
