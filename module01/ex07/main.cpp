@@ -33,15 +33,16 @@ int main(int ac, char **av)
 
             std::string output_path = std::string(av[1]);
             output_path.append(".replace");
-            std::ofstream outfile(output_path);
+            std::ofstream outfile(output_path.c_str());
 
             int where = 0;
             int size_get;
-            while ((size_get = out_text.find(from, where)) != std::string::npos)
+            while ((size_get = out_text.find(from, where)) != -1)
             {
                 out_text.replace(out_text.find(from, where), from.length(), to);
                 where = size_get + to.length();
             }
+            std::cout << size_get << std::endl;
 
             //apply string to output file
 

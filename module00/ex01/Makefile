@@ -34,4 +34,4 @@ fclean: clean
 re: fclean all
 
 .cpp.o:
-	clang++ -c $<  -o $(<:.cpp=.o)
+	clang++ $(FLAGS) -c $<  -o $(<:.cpp=.o)

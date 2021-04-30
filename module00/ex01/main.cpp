@@ -12,6 +12,7 @@
 
 #include "contact.hpp"
 #include <string>
+#include <cstdlib>
 #include <iostream>
 
 void
@@ -173,7 +174,7 @@ search_menu(Contact annuaire[8])
         if (entry_str.length() > 0)
         {
             if (isdigit(entry_str) != 0 && entry_str.length() < 3)
-                entry = atol(entry_str.c_str());
+                entry = std::atol(entry_str.c_str());
         }
     }
     if (std::cin.eof())
