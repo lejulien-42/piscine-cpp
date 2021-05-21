@@ -43,6 +43,10 @@ ScavTrap&	ScavTrap::operator=(ScavTrap const & rhs) {
 	return *this;
 }
 
+void ScavTrap::challengeNewcomer(const std::string &target) {
+    //generate some randon challenges
+}
+
 void ScavTrap::beRepaired(unsigned int amount) {
     if (amount > 100)
         amount = 100;
