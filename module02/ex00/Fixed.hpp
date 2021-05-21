@@ -15,6 +15,7 @@ public:
 	~Fixed(void);
 	Fixed &	operator=(Fixed const & rhs);
 	int	getRawBits(void) const;
+	void setRawBits()
 private:
 	int	_value;
 	const int _frac;
