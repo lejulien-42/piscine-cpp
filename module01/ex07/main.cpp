@@ -27,7 +27,7 @@ int main(int ac, char **av)
         // replace
         std::string from = std::string(av[2]);
         std::string to = std::string(av[3]);
-        if (from != "" && from != to) {
+        if (from != "" && to != "" && from != to) {
 
             // open output file
 
@@ -42,7 +42,6 @@ int main(int ac, char **av)
                 out_text.replace(out_text.find(from, where), from.length(), to);
                 where = size_get + to.length();
             }
-            std::cout << size_get << std::endl;
 
             //apply string to output file
 

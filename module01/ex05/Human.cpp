@@ -4,6 +4,10 @@
 
 #include "Human.hpp"
 
+Human::Human() {
+
+}
+
 std::string Human::identify() const
 {
     return (this->b.identify());

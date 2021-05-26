@@ -11,9 +11,9 @@ class Human {
 private:
     const Brain b;
 public:
+    Human();
     const Brain       &getBrain() const;
     std::string identify() const;
 };
-
 
 #endif //CPP_HUMAN_HPP
