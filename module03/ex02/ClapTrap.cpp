@@ -13,9 +13,18 @@ _ranged_attack_damage(20), _armor_damage_reduction(5) {
 
 }
 
-ClapTrap::ClapTrap(const std::string name): _hit_points(100), _max_hit_point(100), _energy_point(100),
-                                            _max_energy_point(100), _level(1), _name(name), _type("CL4P-TP"), _melee_attack_damage(30),
-                                            _ranged_attack_damage(20), _armor_damage_reduction(5) {
+ClapTrap::ClapTrap(unsigned int hit_point, unsigned int max_hit_point, unsigned int energy_point, unsigned int max_energy_point,
+                   unsigned int level, std::string name, std::string type, unsigned int melee_attack_damage,
+                   unsigned int ranged_attack_damage, unsigned int armor_damage_reduction): _hit_points(hit_point),
+                                                                                            _max_hit_point(max_hit_point),
+                                                                                            _energy_point(energy_point),
+                                                                                            _max_energy_point(max_energy_point),
+                                                                                            _level(level),
+                                                                                            _name(name),
+                                                                                            _type(type),
+                                                                                            _melee_attack_damage(melee_attack_damage),
+                                                                                            _ranged_attack_damage(ranged_attack_damage),
+                                                                                            _armor_damage_reduction(armor_damage_reduction) {
     std::cout << this->_type << " " << this->_name << " was summoned." << std::endl;
 }
 
@@ -25,7 +34,6 @@ ClapTrap::ClapTrap(ClapTrap const & src) {
 }
 
 ClapTrap::~ClapTrap() {
-    std::cout << this->_type << " " << this->_name << " was destroyed." << std::endl;
 }
 
 ClapTrap&	ClapTrap::operator=(ClapTrap const & rhs) {
@@ -70,7 +78,7 @@ void ClapTrap::takeDamage(unsigned int amount) {
     }
     else if (amount != 0)
     {
-        std::cout << this->type << " " << this->_name << " est deja 6 pieds sous terre." << std::endl;
+        std::cout << this->_type << " " << this->_name << " est deja 6 pieds sous terre." << std::endl;
     }
 }
 

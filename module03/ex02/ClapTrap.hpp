@@ -4,14 +4,22 @@
 
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
-
 #include <iostream>
 
 class ClapTrap
 {
 public:
     ClapTrap();
-	ClapTrap(std::string name);
+	ClapTrap(   unsigned int    hit_points,
+                unsigned int    max_hit_point,
+                unsigned int    energy_point,
+                unsigned int    max_energy_point,
+                unsigned int    level,
+                std::string     name,
+                std::string     type,
+                unsigned int    melee_attack_damage,
+                unsigned int    ranged_attack_damage,
+                unsigned int    armor_damage_reduction);
 	ClapTrap(ClapTrap const & src);
 	~ClapTrap();
 	ClapTrap&	    operator=(ClapTrap const & rhs);
