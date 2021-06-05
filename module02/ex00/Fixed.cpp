@@ -28,6 +28,10 @@ int Fixed::getRawBits() const {
 	return this->_value;
 }
 
+void	Fixed::setRawBits(int const raw) {
+	this->_value = raw;
+}
+
 Fixed&	Fixed::operator=(Fixed const & rhs)
 {
     std::cout << "Assignation operator called" << std::endl;

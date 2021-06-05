@@ -40,6 +40,7 @@ int Fixed::toInt() const
 {
     return (this->_value >> this->_frac);
 }
+
 float Fixed::toFloat() const
 {
     return ((float)this->_value / (float)(1 << this->_frac));
@@ -47,6 +48,10 @@ float Fixed::toFloat() const
 
 int Fixed::getRawBits() const {
 	return this->_value;
+}
+
+void Fixed::setRawBits(int const raw) {
+	this->_value = raw;
 }
 
 Fixed&	Fixed::operator=(Fixed const & rhs)
