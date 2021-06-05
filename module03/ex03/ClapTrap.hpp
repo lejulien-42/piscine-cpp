@@ -16,11 +16,12 @@ public:
           unsigned int armor_damage_reduction);
 	ClapTrap(ClapTrap const & src);
 	~ClapTrap();
-	ClapTrap&	    operator=(ClapTrap const & rhs);
-	unsigned int    rangedAttack(std::string const &target);
-    unsigned int    meleeAttack(std::string const &target);
-	void            takeDamage(unsigned int amount);
-	void            beRepaired(unsigned int amount);
+	std::string		get_name();
+	ClapTrap&		operator=(ClapTrap const & rhs);
+	unsigned int	rangedAttack(std::string const &target);
+    unsigned int	meleeAttack(std::string const &target);
+	void			takeDamage(unsigned int amount);
+	void			beRepaired(unsigned int amount);
 
 protected:
 	unsigned int	_hit_points;

@@ -5,8 +5,10 @@
 #ifndef NINJATRAP_HPP
 # define NINJATRAP_HPP
 
-#include <iostream>
-#include "ClapTrap.hpp"
+# include <iostream>
+# include "ClapTrap.hpp"
+# include "FragTrap.hpp"
+# include "ScavTrap.hpp"
 
 class NinjaTrap : public ClapTrap
 {
@@ -15,10 +17,13 @@ public:
 	NinjaTrap(std::string name);
 	NinjaTrap(NinjaTrap const & src);
 	~NinjaTrap();
-	NinjaTrap&	    operator=(NinjaTrap const & rhs);
-    unsigned int    vaulthunter_dot_exe(std::string const &target);
+	NinjaTrap&	operator=(NinjaTrap const & rhs);
+    void		ninjaShoebox(ClapTrap &cible);
+    void		ninjaShoebox(NinjaTrap &cible);
+    void		ninjaShoebox(FragTrap &cible);
+    void		ninjaShoebox(ScavTrap &cible);
 };
 
 #endif
 
-// ----- by lejulien -----
+// ----- by lejulien

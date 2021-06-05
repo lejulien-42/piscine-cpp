@@ -4,27 +4,20 @@
 
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "NinjaTrap.hpp"
 
 int main( void )
 {
     FragTrap    billy("billy");
     FragTrap    billy2(billy);
     ScavTrap    bob("bob");
+	NinjaTrap	ninj("Nino");
+	NinjaTrap	bull("Bully");
 
-    bob.challengeNewcomer("billy");
-    bob.takeDamage(billy.rangedAttack("bob"));
-    bob.takeDamage(billy.meleeAttack("bob"));
-    bob.takeDamage(billy.rangedAttack("bob"));
-    bob.takeDamage(billy.meleeAttack("bob"));
-    bob.takeDamage(billy.rangedAttack("bob"));
-    bob.takeDamage(billy.meleeAttack("bob"));
-    bob.takeDamage(billy.rangedAttack("bob"));
-    bob.beRepaired(200);
-    bob.challengeNewcomer("billy");
-    bob.takeDamage(billy.rangedAttack("bob"));
-    bob.beRepaired(200);
-    bob.challengeNewcomer("billy");
-    bob.takeDamage(billy.vaulthunter_dot_exe("bob"));
-    bob.takeDamage(billy.rangedAttack("bob"));
+    bob.challengeNewcomer("Nino");
+	ninj.ninjaShoebox(bob);
+	ninj.takeDamage(billy.meleeAttack("Nino"));
+	ninj.ninjaShoebox(billy);
+	ninj.ninjaShoebox(bull);
     return (0);
 }

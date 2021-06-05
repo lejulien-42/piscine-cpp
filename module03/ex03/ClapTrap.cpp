@@ -43,6 +43,10 @@ ClapTrap&	ClapTrap::operator=(ClapTrap const & rhs) {
 	return *this;
 }
 
+std::string	ClapTrap::get_name() {
+	return this->_name;
+}
+
 void ClapTrap::beRepaired(unsigned int amount) {
     if (amount > 100)
         amount = 100;

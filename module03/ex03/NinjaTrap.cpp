@@ -25,6 +25,30 @@ NinjaTrap::~NinjaTrap() {
     std::cout << "N1NJ4-TP " << this->_name << " was destroyed." << std::endl;
 }
 
+void	NinjaTrap::ninjaShoebox(ClapTrap &cible)
+{
+	std::cout << this->_type << " " << this->_name << " attaque " << cible.get_name() << " lui affligeant " << 50 << " dommages 「prend ca bondinet. 」" << std::endl;
+	cible.takeDamage(50);
+}
+
+void	NinjaTrap::ninjaShoebox(NinjaTrap &cible)
+{
+	std::cout << this->_type << " " << this->_name << " attaque " << cible.get_name() << " lui affligeant " << 25 << " dommages 「Tu l'as cherche mon frere. 」" << std::endl;
+	cible.takeDamage(25);
+}
+
+void	NinjaTrap::ninjaShoebox(FragTrap &cible)
+{
+	std::cout << this->_type << " " << this->_name << " attaque " << cible.get_name() << " lui affligeant " << 20 << " dommages 「Tes blagues finirons par te tuer. 」" << std::endl;
+	cible.takeDamage(20);
+}
+
+void	NinjaTrap::ninjaShoebox(ScavTrap &cible)
+{
+	std::cout << this->_type << " " << this->_name << " attaque " << cible.get_name() << " lui affligeant " << 70 << " dommages 「Ne t'avise plus de me donner un defi. 」" << std::endl;
+	cible.takeDamage(70);
+}
+
 NinjaTrap&	NinjaTrap::operator=(NinjaTrap const & rhs) {
 	if (this != &rhs) {
 		this->_hit_points = rhs._hit_points;
