@@ -6,7 +6,6 @@
 
 #include <iostream>
 #include "ScavTrap.hpp"
-#include <stdlib.h>
 
 ScavTrap::ScavTrap(): _hit_points(100), _max_hit_point(100), _energy_point(50),
 _max_energy_point(50), _level(1), _name("SC4V-TR4P"), _melee_attack_damage(20),
@@ -50,7 +49,7 @@ void ScavTrap::challengeNewcomer(const std::string &target) {
                                  " a la roulette russe.",
                                  " a la corde a sauter.",
                                  " au uno"};
-    std::cout << "SC4V-TP " << this->_name << " defie " << target << challenges[rand() % 4] << std::endl;
+    std::cout << "SC4V-TP " << this->_name << " defie " << target << challenges[std::rand() % 4] << std::endl;
 }
 
 void ScavTrap::beRepaired(unsigned int amount) {
