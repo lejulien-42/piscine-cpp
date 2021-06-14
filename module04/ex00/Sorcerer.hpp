@@ -6,6 +6,7 @@
 # define SORCERER_HPP
 
 #include <iostream>
+#include "Victim.hpp"
 
 class Sorcerer
 {
@@ -16,6 +17,7 @@ public:
 	Sorcerer &	operator=(Sorcerer const & rhs);
 	std::string	getName() const;
 	std::string	getTitle() const;
+	void		polymorph(Victim const &vic) const;
 	void		introduce(void) const;
 private:
 	Sorcerer(void);

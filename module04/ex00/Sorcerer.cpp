@@ -43,6 +43,11 @@ Sorcerer&	Sorcerer::operator=(Sorcerer const & rhs)
 	return *this;
 }
 
+void		Sorcerer::polymorph(Victim const &vic) const
+{
+	vic.getPolymorphed();	
+}
+
 std::ostream& operator<<(std::ostream& os, const Sorcerer& fx)
 {
 	os << "I am " << fx.getName() << ", " << fx.getTitle() << ", amd I like ponies!" << std::endl;
