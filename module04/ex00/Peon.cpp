@@ -13,8 +13,8 @@ Peon::Peon(void): _name("Bob")
 
 Peon::Peon(std::string name): _name(name)
 {
-	std::cout << "Zog zog." << std::endl;
 	std::cout << "Some random victim called " << this->_name << " just appeared!" << std::endl;
+	std::cout << "Zog zog." << std::endl;
 }
 
 Peon::Peon(Peon const & src)
@@ -25,8 +25,7 @@ Peon::Peon(Peon const & src)
 
 Peon::~Peon(void)
 {
-	std::cout << "Bleuark..." <<std::endl;
-	std::cout << "Peon " << this->_name << " just died for no apparent reason!" << std::endl;
+	std::cout << "Victim " << this->_name << " just died for no apparent reason!" << std::endl;
 }
 
 std::string	Peon::getName() const
@@ -43,6 +42,7 @@ Peon&	Peon::operator=(Peon const & rhs)
 void	Peon::getPolymorphed() const
 {
 	std::cout << this->_name << " has been turned into a pink pony!" << std::endl;
+	std::cout << "Bleuark..." <<std::endl;
 }
 
 std::ostream& operator<<(std::ostream& os, const Peon& fx)

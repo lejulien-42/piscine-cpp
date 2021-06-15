@@ -45,7 +45,12 @@ Sorcerer&	Sorcerer::operator=(Sorcerer const & rhs)
 
 void		Sorcerer::polymorph(Victim const &vic) const
 {
-	vic.getPolymorphed();	
+	vic.getPolymorphed();
+}
+
+void		Sorcerer::polymorph(Peon const &peo) const
+{
+	peo.getPolymorphed();
 }
 
 std::ostream& operator<<(std::ostream& os, const Sorcerer& fx)

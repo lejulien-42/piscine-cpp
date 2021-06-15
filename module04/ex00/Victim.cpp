@@ -39,7 +39,7 @@ Victim&	Victim::operator=(Victim const & rhs)
 
 void	Victim::getPolymorphed() const
 {
-	std::cout << this->_name << " has been turned into a cute sheep!" << std::endl;
+	std::cout << this->_name << " has been turned into a cute little sheep!" << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& os, const Victim& fx)
