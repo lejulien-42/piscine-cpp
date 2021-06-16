@@ -6,7 +6,7 @@
 /*   By: lejulien <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 17:57:10 by lejulien          #+#    #+#             */
-/*   Updated: 2021/06/16 17:29:46 by lejulien         ###   ########.fr       */
+/*   Updated: 2021/06/16 18:26:39 by lejulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include "RadScorpion.hpp"
 #include "Character.hpp"
 #include "SuperMutant.hpp"
+#include "FlySwatter.hpp"
+#include "MutantFly.hpp"
 
 int
 	main()
@@ -29,6 +31,7 @@ int
 
 	AWeapon* pr = new PlasmaRifle();
 	AWeapon* pf = new PowerFist();
+	AWeapon* fs = new FlySwatter();
 
 	me->equip(pr);
 	std::cout << *me;
@@ -66,5 +69,14 @@ int
 	me->equip(pf);
 	std::cout << *me;
 	me->attack(a);
+	me->equip(fs);
+	std::cout << *me;
+	me->attack(a);
+
+	std::cout << std::endl << "Now with customs one" << std::endl;
+	Enemy *c = new MutantFly();
+	std::cout << *me;
+	me->attack(c);
+	std::cout << *me;
 	return 0;
 }
