@@ -53,9 +53,14 @@ void		Sorcerer::polymorph(Peon const &peo) const
 	peo.getPolymorphed();
 }
 
+void		Sorcerer::polymorph(Thief const &thi) const
+{
+	thi.getPolymorphed();
+}
+
 std::ostream& operator<<(std::ostream& os, const Sorcerer& fx)
 {
-	os << "I am " << fx.getName() << ", " << fx.getTitle() << ", amd I like ponies!" << std::endl;
+	os << "I am " << fx.getName() << ", " << fx.getTitle() << ", and I like ponies!" << std::endl;
 	return os;
 }
 

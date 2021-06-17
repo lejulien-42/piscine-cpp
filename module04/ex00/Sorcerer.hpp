@@ -8,6 +8,7 @@
 #include <iostream>
 #include "Victim.hpp"
 #include "Peon.hpp"
+#include "Thief.hpp"
 
 class Sorcerer
 {
@@ -20,6 +21,7 @@ public:
 	std::string	getTitle() const;
 	void		polymorph(Victim const &vic) const;
 	void		polymorph(Peon const &peo) const;
+	void		polymorph(Thief const &thi) const;
 	void		introduce(void) const;
 private:
 	Sorcerer(void);
