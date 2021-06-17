@@ -5,6 +5,7 @@
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
+#include <cstdlib>
 #include <iostream>
 
 class ScavTrap

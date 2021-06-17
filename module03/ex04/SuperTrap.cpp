@@ -21,7 +21,16 @@ SuperTrap::SuperTrap(): ClapTrap("SuperMan"), FragTrap("SuperMan"), NinjaTrap("S
 	std::cout << this->_type << " " << this->_name << " was summoned." << std::endl;
 }
 
-SuperTrap::SuperTrap(const std::string name): ClapTrap(100, 100, 100, 100, 1, name, "SUP3R-TP " ,30, 20, 5) {
+SuperTrap::SuperTrap(const std::string name): ClapTrap(name), FragTrap(name), NinjaTrap(name) {
+	this->_hit_points = FragTrap::_hit_points;
+	this->_max_hit_point = FragTrap::_max_hit_point;
+	this->_energy_point = NinjaTrap::_energy_point;
+	this->_max_energy_point = NinjaTrap::_max_energy_point;
+	this->_level = 1;
+	this->_type = "SUP3R-TP";
+	this->_melee_attack_damage = NinjaTrap::_melee_attack_damage;
+	this->_ranged_attack_damage = FragTrap::_ranged_attack_damage;
+	this->_armor_damage_reduction = FragTrap::_armor_damage_reduction;
     std::cout << "SUP3R-TP " << this->_name << " was summoned." << std::endl;
 }
 

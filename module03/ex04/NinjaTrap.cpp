@@ -13,16 +13,16 @@ NinjaTrap::NinjaTrap(): ClapTrap(60, 60, 120, 120, 1, "CL4P-TR4P", "N1NJ4-TP", 6
 }
 
 NinjaTrap::NinjaTrap(const std::string name): ClapTrap(60, 60, 120, 120, 1, name, "N1NJ4-TP", 60, 5, 0) {
-    std::cout << this->_type << " " << this->_name << " was summoned." << std::endl;
+    std::cout << "N1NJ4-TP " << this->_name << " was summoned." << std::endl;
 }
 
 NinjaTrap::NinjaTrap(NinjaTrap const & src) {
 	*this = src;
-    std::cout << this->_type << " " << this->_name << " was summoned." << std::endl;
+    std::cout << "N1NJ4-TP " << this->_name << " was summoned." << std::endl;
 }
 
 NinjaTrap::~NinjaTrap() {
-    std::cout << this->_type << " " << this->_name << " was destroyed." << std::endl;
+    std::cout << "N1NJ4-TP " << this->_name << " was destroyed." << std::endl;
 }
 
 void	NinjaTrap::ninjaShoebox(ClapTrap &cible)

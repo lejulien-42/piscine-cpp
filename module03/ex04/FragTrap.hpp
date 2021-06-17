@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include "ClapTrap.hpp"
+#include <cstdlib>
 
 class FragTrap : virtual public ClapTrap
 {

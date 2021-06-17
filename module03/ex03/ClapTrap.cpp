@@ -48,12 +48,9 @@ std::string	ClapTrap::get_name() {
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
-    if (amount > 100)
-        amount = 100;
     if (this->_hit_points + amount > this->_max_hit_point) {
-        amount = 100 - this->_hit_points;
         std::cout << this->_type << " " << this->_name << " recupere " << amount << " HP. 「 Au moins, j'ai encore toutes mes dents. 」" << std::endl;
-        this->_hit_points = 100;
+        this->_hit_points = this->_max_hit_point;
     }
     else {
         std::cout << this->_type << " " << this->_name << " recupere " << amount << " HP. 「 Au moins, j'ai encore toutes mes dents. 」" << std::endl;

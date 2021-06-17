@@ -13,7 +13,7 @@ FragTrap::FragTrap(): ClapTrap(100, 100, 100, 100, 1, "CL4P-TR4P", "FR4G-TP", 30
 }
 
 FragTrap::FragTrap(const std::string name): ClapTrap(100, 100, 100, 100, 1, name, "FR4G-TP" ,30, 20, 5) {
-    std::cout << this->_type << " " << this->_name << " was summoned." << std::endl;
+    std::cout << "FR4G-TP " << this->_name << " was summoned." << std::endl;
 }
 
 FragTrap::FragTrap(FragTrap const & src) {
@@ -22,7 +22,7 @@ FragTrap::FragTrap(FragTrap const & src) {
 }
 
 FragTrap::~FragTrap() {
-    std::cout << this->_type << " " << this->_name << " was destroyed." << std::endl;
+    std::cout << "FR4G-TP " << this->_name << " was destroyed." << std::endl;
 }
 
 FragTrap&	FragTrap::operator=(FragTrap const & rhs) {
