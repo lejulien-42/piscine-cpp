@@ -6,7 +6,7 @@
 /*   By: lejulien <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 17:57:10 by lejulien          #+#    #+#             */
-/*   Updated: 2021/06/16 18:26:39 by lejulien         ###   ########.fr       */
+/*   Updated: 2021/06/18 04:53:07 by lejulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 #include "SuperMutant.hpp"
 #include "FlySwatter.hpp"
 #include "MutantFly.hpp"
+#include "ChuckNoris.hpp"
+#include "ThorsHammer.hpp"
 
 int
 	main()
@@ -32,6 +34,7 @@ int
 	AWeapon* pr = new PlasmaRifle();
 	AWeapon* pf = new PowerFist();
 	AWeapon* fs = new FlySwatter();
+	AWeapon* th = new ThorsHammer();
 
 	me->equip(pr);
 	std::cout << *me;
@@ -77,6 +80,12 @@ int
 	Enemy *c = new MutantFly();
 	std::cout << *me;
 	me->attack(c);
+	std::cout << *me;
+
+	Enemy *d = new ChuckNoris();
+	me->equip(th);
+	std::cout << *me;
+	me->attack(d);
 	std::cout << *me;
 	return 0;
 }

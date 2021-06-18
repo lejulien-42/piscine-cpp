@@ -9,6 +9,7 @@
 #include "Victim.hpp"
 #include "Peon.hpp"
 #include "Thief.hpp"
+#include "Shrek.hpp"
 
 class Sorcerer
 {
@@ -22,6 +23,7 @@ public:
 	void		polymorph(Victim const &vic) const;
 	void		polymorph(Peon const &peo) const;
 	void		polymorph(Thief const &thi) const;
+	void		polymorph(Shrek const &shr) const;
 	void		introduce(void) const;
 private:
 	Sorcerer(void);

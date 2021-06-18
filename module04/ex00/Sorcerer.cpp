@@ -58,6 +58,11 @@ void		Sorcerer::polymorph(Thief const &thi) const
 	thi.getPolymorphed();
 }
 
+void		Sorcerer::polymorph(Shrek const &shr) const
+{
+	shr.getPolymorphed();
+}
+
 std::ostream& operator<<(std::ostream& os, const Sorcerer& fx)
 {
 	os << "I am " << fx.getName() << ", " << fx.getTitle() << ", and I like ponies!" << std::endl;
