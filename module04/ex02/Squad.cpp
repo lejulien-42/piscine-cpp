@@ -56,10 +56,16 @@ int 			Squad::push(ISpaceMarine *space)
 	s_squad *ptr;
 
 	newer = new s_squad;
-	
-	if (this->_squad == NULL)
+	ptr = this->_squad;
+	newer->element = space;
+	if (ptr == NULL)
 	{
+		this->_squad = newer;
+		return 1;
 	}
+	while (ptr->next != NULL)
+		ptr = ptr->next;
+	ptr->next = newer;
 	return this->getCount();
 }
 

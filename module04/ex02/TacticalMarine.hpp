@@ -2,19 +2,19 @@
 // -Created by lejulien @ 42-
 //
 
-#ifndef SPACEMARINE_HPP
-# define SPACEMARINE_HPP
+#ifndef TACTICALMARINE_HPP
+# define TACTICALMARINE_HPP
 
 #include <iostream>
 #include "ISpaceMarine.hpp"
 
-class SpaceMarine: public ISpaceMarine
+class TacticalMarine: public ISpaceMarine
 {
 public:
-	SpaceMarine(void);
-	SpaceMarine(SpaceMarine const & src);
-	~SpaceMarine(void);
-	SpaceMarine &	operator=(SpaceMarine const & rhs);
+	TacticalMarine(void);
+	TacticalMarine(TacticalMarine const & src);
+	~TacticalMarine(void);
+	TacticalMarine &	operator=(TacticalMarine const & rhs);
 	ISpaceMarine	*clone() const;
 	void			battleCry() const;
 	void			rangedAttack() const;
