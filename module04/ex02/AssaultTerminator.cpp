@@ -12,7 +12,7 @@ AssaultTerminator::AssaultTerminator(void)
 
 AssaultTerminator::AssaultTerminator(AssaultTerminator const & src)
 {
-	std::cout << "Tactical Marine ready  for battle!" << std::endl;
+	std::cout << "* teleports from space *" << std::endl;
 	*this = src;
 	return ;
 }

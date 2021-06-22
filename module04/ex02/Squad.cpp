@@ -49,13 +49,14 @@ ISpaceMarine	*Squad::getUnit(int n) const
 	s_squad	*ptr;
 	int		i;
 
-	if (n >= this->getCount())
+	if (n + 1 > this->getCount())
 		return NULL;
 	i = 0;
 	ptr = this->_squad;
-	while (i < n - 1)
+	while (i < n)
 	{
 		ptr = ptr->next;
+		i++;
 	}
 	return ptr->element;
 }
@@ -68,7 +69,8 @@ int 			Squad::push(ISpaceMarine *space)
 	newer = new s_squad;
 	ptr = this->_squad;
 	newer->element = space;
-	if (ptr == NULL)
+	newer->next = NULL;
+	if (!this->_squad)
 	{
 		this->_squad = newer;
 		return 1;
