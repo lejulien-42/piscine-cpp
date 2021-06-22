@@ -8,7 +8,7 @@
 #include <iostream>
 #include "ISquad.hpp"
 #include "ISpaceMarine.hpp"
-#include "SpaceMarine.hpp"
+#include "TacticalMarine.hpp"
 
 typedef struct	s_squad
 {
