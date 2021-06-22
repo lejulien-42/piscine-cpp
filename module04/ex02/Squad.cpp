@@ -83,8 +83,16 @@ int 			Squad::push(ISpaceMarine *space)
 
 Squad&	Squad::operator=(Squad const & rhs)
 {
+	int i = 0;
+	int count = rhs.getCount();
 	if (this != &rhs)
-		return *this;
+	{
+		while (i < count)
+		{
+			this->push(rhs.getUnit(i)->clone());
+			i++;
+		}
+	}
 	return *this;
 }
 

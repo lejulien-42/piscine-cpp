@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 19:10:50 by user42            #+#    #+#             */
-/*   Updated: 2021/06/22 08:31:58 by lejulien         ###   ########.fr       */
+/*   Updated: 2021/06/22 18:45:31 by lejulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,13 @@ int main()
 {
 	ISpaceMarine* bob = new TacticalMarine;
 	ISpaceMarine* jim = new AssaultTerminator;
-	ISquad* vlc = new Squad;
+	ISquad *vlc = new Squad;
+	ISquad *vlc2 = new Squad;
 
 	vlc->push(jim);
-	vlc->push(jim->clone());
 	vlc->push(bob);
+	vlc2 = vlc;
+	vlc->push(jim->clone());
 
 	for (int i = 0; i < vlc->getCount(); ++i)
 	{
@@ -34,5 +36,6 @@ int main()
 		cur->meleeAttack();
 	}
 	delete vlc;
+	delete vlc2;
 	return 0;
 }
