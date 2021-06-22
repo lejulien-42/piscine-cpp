@@ -15,7 +15,17 @@ Squad::Squad(Squad const & src)
 }
 
 Squad::~Squad(void)
-{}
+{
+	s_squad *ptr;
+
+	while (this->_squad != NULL)
+	{
+		ptr = this->_squad;
+		this->_squad = ptr->next;
+		delete ptr->element;
+		delete ptr;
+	}
+}
 
 int		Squad::getCount() const
 {
