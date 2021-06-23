@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 19:10:50 by user42            #+#    #+#             */
-/*   Updated: 2021/06/22 18:45:31 by lejulien         ###   ########.fr       */
+/*   Updated: 2021/06/23 04:25:00 by lejulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,23 @@ int main()
 
 	vlc->push(jim);
 	vlc->push(bob);
-	vlc2 = vlc;
-	vlc->push(jim->clone());
+	vlc2->push(jim->clone());
+	vlc2->push(jim->clone());
+	vlc2->push(bob->clone());
+
+	std::cout << std::endl << " From vlc" << std::endl << std::endl;
 
 	for (int i = 0; i < vlc->getCount(); ++i)
 	{
 		ISpaceMarine* cur = vlc->getUnit(i);
 		cur->battleCry();
+		cur->rangedAttack();
+		cur->meleeAttack();
+	}
+	std::cout << std::endl << " From vlc2" << std::endl << std::endl;
+	for (int i = 0; i < vlc2->getCount(); ++i)
+	{
+		ISpaceMarine* cur = vlc2->getUnit(i);
 		cur->rangedAttack();
 		cur->meleeAttack();
 	}
