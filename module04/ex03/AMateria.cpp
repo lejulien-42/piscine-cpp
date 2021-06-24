@@ -1,18 +1,36 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lejulien <lejulien@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/23 04:49:46 by lejulien          #+#    #+#             */
-/*   Updated: 2021/06/23 05:00:00 by lejulien         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+//
+// -Created by lejulien @ 42-
+//
 
+#include <iostream>
 #include "AMateria.hpp"
-#include <string>
 
-AMateria::AMateria() _xp(0), _type("none")
+AMateria::AMateria(void): _xp(0)
+{}
+
+AMateria::AMateria(AMateria const & src): _xp(0)
 {
+	*this = src;
+	return ;
 }
+
+AMateria::~AMateria(void)
+{}
+
+void	AMateria::use(ICharacter &taget) { this->_xp += 10; }
+
+// setter
+unsigned int	AMateria::getXP(void) const { return this->_xp; }
+std::string const & AMateria::getType() const { return this->_type; }
+
+//getters
+void AMateria::setXP(unsigned int value) { this->_xp = value; }
+
+AMateria&	AMateria::operator=(AMateria const & rhs)
+{
+	if (this != &rhs)
+		this->_xp = rhs.getXP();
+	return *this;
+}
+
+// ----- by lejulien -----

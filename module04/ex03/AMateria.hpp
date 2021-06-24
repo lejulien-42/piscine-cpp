@@ -1,35 +1,37 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lejulien <lejulien@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/23 04:39:57 by lejulien          #+#    #+#             */
-/*   Updated: 2021/06/23 05:01:22 by lejulien         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+//
+// -Created by lejulien @ 42-
+//
 
-#ifdef AMATERIA_HPP
+#ifndef AMATERIA_HPP
 # define AMATERIA_HPP
 
-#include "ICharacter.hpp"
+#include <iostream>
+#include <string>
+
+class ICharacter;
 
 class AMateria
 {
-	protected:
-		unsigned int _xp;
-		std::string	_type;
+protected:
+	unsigned int _xp;
+	std::string	_type;
+public:
+	AMateria(std::string const &type);
 
-	public:
-		AMateria(std::string const type);
-		virtual ~AMateria();
-		
-		std::string const & getType() const;
-		unsigned int getXP() const;
+	virtual ~AMateria(void);
+	virtual AMateria *clone() const = 0;
+	virtual void use(ICharacter &target);
 
-		virtual AMateria *clone()const = 0;
-		virtual void use(ICharacter &target);
+	AMateria(AMateria const & src);
+	AMateria &	operator=(AMateria const & rhs);
+	std::string const & getType() const;
+	unsigned int getXP() const;
+	void	setXP(unsigned int value);
+
+private:
+	AMateria(void);
 };
 
 #endif
+
+// ----- by lejulien -----
