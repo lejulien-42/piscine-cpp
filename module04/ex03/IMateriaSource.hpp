@@ -6,17 +6,14 @@
 # define IMATERIASOURCE_HPP
 
 #include <iostream>
+#include "AMateria.hpp"
 
 class IMateriaSource
 {
 public:
-	IMateriaSource(void);
-	IMateriaSource(IMateriaSource const & src);
-	~IMateriaSource(void);
-	IMateriaSource &	operator=(IMateriaSource const & rhs);
-	int	getFoo(void) const;
-private:
-	int	_foo;
+	virtual ~IMateriaSource(void) = 0;
+	virtual void learnMateria(AMateria *) = 0;
+	virtual AMateria* createMateria(std::string const &type) = 0;
 };
 
 #endif
