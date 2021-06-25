@@ -18,6 +18,10 @@ AMateria::~AMateria(void)
 {}
 
 void	AMateria::use(ICharacter &taget) { this->_xp += 10; }
+AMateria *AMateria::clone() const
+{
+	return NULL;
+}
 
 // setter
 unsigned int	AMateria::getXP(void) const { return this->_xp; }
