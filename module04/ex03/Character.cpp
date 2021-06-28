@@ -14,7 +14,12 @@ Character::Character(void): _name("Bob")
 }
 
 Character::Character(std::string const &name): _name(name)
-{}
+{
+	this->_mat[0] = NULL;
+	this->_mat[1] = NULL;
+	this->_mat[2] = NULL;
+	this->_mat[3] = NULL;
+}
 
 Character::Character(Character const & src)
 {
@@ -63,7 +68,7 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter& target)
 {
-	if (idx < 0 || idx > 3)
+	if (idx < 0 || idx > 3 || this->_mat[idx] == NULL)
 		return ;
 	this->_mat[idx]->use(target);
 }

@@ -6,9 +6,9 @@
 #include "Cure.hpp"
 #include "AMateria.hpp"
 
-Cure::Cure(void):AMateria("ice") {}
+Cure::Cure(void):AMateria("cure") {}
 
-Cure::Cure(Cure const & src):AMateria("ice")
+Cure::Cure(Cure const & src):AMateria("cure")
 {
 	this->_xp = src.getXP();
 	this->_type = src.getType();
@@ -20,7 +20,7 @@ Cure::~Cure(void) {}
 void	Cure::use(ICharacter &target)
 {
 	this->_xp += 10;
-	std::cout << "* shoot an ice bolt at <taget name> *" << std::endl;
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }
 
 AMateria *Cure::clone() const

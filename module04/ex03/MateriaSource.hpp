@@ -8,15 +8,15 @@
 #include "IMateriaSource.hpp"
 #include <iostream>
 
-class MateriaSource:public IMateriaSource
+class MateriaSource: public IMateriaSource
 {
 public:
 	MateriaSource(void);
-	MateriaSource(MateriaSource const & src);
 	~MateriaSource(void);
+	MateriaSource(MateriaSource const & src);
 	MateriaSource &	operator=(MateriaSource const & rhs);
-	void learnMateria(AMateria *);
-	AMateria *createMateria(std::string const &type);
+	virtual void learnMateria(AMateria *);
+	virtual AMateria *createMateria(std::string const &type);
 private:
 	AMateria *_mat[4];
 };

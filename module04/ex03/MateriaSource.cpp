@@ -5,6 +5,18 @@
 #include <iostream>
 #include "MateriaSource.hpp"
 
+IMateriaSource::~IMateriaSource(){}
+MateriaSource::~MateriaSource(void)
+{
+	int i = 0;
+	while (i < 4)
+	{
+		if (this->_mat[i] != NULL)
+			delete this->_mat[i];
+		i++;
+	}
+}
+
 MateriaSource::MateriaSource(void)
 {
 	this->_mat[0] = NULL;
@@ -17,17 +29,6 @@ MateriaSource::MateriaSource(MateriaSource const & src)
 {
 	*this = src;
 	return ;
-}
-
-MateriaSource::~MateriaSource(void)
-{
-	int i = 0;
-	while (i < 4)
-	{
-		if (this->_mat[i] != NULL)
-			delete this->_mat[i];
-		i++;
-	}
 }
 
 void	MateriaSource::learnMateria(AMateria *mat)
@@ -49,7 +50,7 @@ AMateria *MateriaSource::createMateria(std::string const &target)
 	int i = 0;
 	while (i < 4)
 	{
-		if (this->_mat[i] != NULL && this->_mat[i]->getType() == target)
+		if (this->_mat[i] != NULL && this->_mat[i]->getType().compare(target)) 
 			return this->_mat[i]->clone();
 		i++;
 	}
@@ -59,7 +60,7 @@ AMateria *MateriaSource::createMateria(std::string const &target)
 MateriaSource&	MateriaSource::operator=(MateriaSource const & rhs)
 {
 	if (this != &rhs)
-	return *this;
+		return *this;
 	return *this;
 }
 

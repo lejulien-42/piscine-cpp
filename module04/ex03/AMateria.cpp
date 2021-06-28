@@ -8,6 +8,8 @@
 AMateria::AMateria(void): _xp(0)
 {}
 
+AMateria::AMateria(std::string const &type): _xp(0), _type(type) {}
+
 AMateria::AMateria(AMateria const & src): _xp(0)
 {
 	*this = src;
@@ -17,7 +19,7 @@ AMateria::AMateria(AMateria const & src): _xp(0)
 AMateria::~AMateria(void)
 {}
 
-void	AMateria::use(ICharacter &taget) { this->_xp += 10; }
+void	AMateria::use(ICharacter &target) { this->_xp += 10;(void) target;}
 AMateria *AMateria::clone() const
 {
 	return NULL;
