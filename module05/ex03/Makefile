@@ -6,12 +6,12 @@
 #    By: lejulien <lejulien@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/05 13:10:44 by lejulien          #+#    #+#              #
-#    Updated: 2021/07/04 03:03:19 by lejulien         ###   ########.fr        #
+#    Updated: 2021/07/04 06:37:13 by lejulien         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	 	= 	./main.cpp ./Bureaucrat.cpp ./Form.cpp ./ShrubberyCreationForm.cpp \
-				./RobotomyRequestForm.cpp ./PresidentialPardonForm.cpp
+				./RobotomyRequestForm.cpp ./PresidentialPardonForm.cpp ./Intern.cpp
 
 NAME		= a.out
 
