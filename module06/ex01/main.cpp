@@ -3,15 +3,7 @@
 //
 
 #include <iostream>
-
-class Data
-{
-	public:
-	Data() {};
-	Data(const Data &){};
-	~Data() {};
-	const Data &operator=(const Data &p) {return p;};
-};
+#include "Data.hpp"
 
 uintptr_t serialize(Data *ptr)
 {

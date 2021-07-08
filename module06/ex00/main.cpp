@@ -21,7 +21,7 @@ void print_char(char c, int i)
 
 void print_int(int i, float f, char **av)
 {
-	i = atoi(av[1]);
+	//i = atoi(av[1]);
 	if (f == atof("inf") || f == atof("-inf") || f != f || (av[1][0] == '-' && i > 0) || (av[1][0] != '-' && i < 0))
 		std::cout << "int: impossible" << std::endl;
 	else
@@ -90,11 +90,17 @@ int
 	if (ac != 2)
 		return print_error();
 	float f = atof(av[1]);
-
+	int i = 0;
 	// Get values
+	if (f == 0.0 && av[1][0] != '0')
+	{
+		f = av[1][0];
+		i = av[1][0];
+	}
+	else
+		i = static_cast<int>(f);
 	char c = static_cast<char>(f);
 	double d = static_cast<double>(f);
-	int i = static_cast<int>(f);
 
 	// Error Case
 	if (av[1][0] == '\0')
