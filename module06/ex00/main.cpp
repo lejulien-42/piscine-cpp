@@ -113,7 +113,7 @@ int
 	}
 	else
 	{
-		if (check_num(av[1]))
+		if (test.compare("nan") != 0 && test.compare("+inf") != 0 && test.compare("-inf") != 0 && test.compare("inf") != 0 && check_num(av[1]))
 			return print_error();
 	}
 	// Write value
