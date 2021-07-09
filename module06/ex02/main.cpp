@@ -39,7 +39,7 @@ Base
 }
 
 void
-	identify(Base &p)
+	identify_from_reference(Base &p)
 {
 	try{
 		Base &a = dynamic_cast<A&>(p);
@@ -59,7 +59,7 @@ void
 }
 
 void
-	identify(Base *p)
+	identify_from_pointer(Base *p)
 {
 	A *a;
 	B *b;
@@ -77,23 +77,23 @@ int
 	main()
 {
 	Base *a = generate();
-	identify(*a);
-	identify(a);
+	identify_from_reference(*a);
+	identify_from_pointer(a);
 	Base *b = generate();
-	identify(*b);
-	identify(b);
+	identify_from_reference(*b);
+	identify_from_pointer(b);
 	Base *c = generate();
-	identify(*c);
-	identify(c);
+	identify_from_reference(*c);
+	identify_from_pointer(c);
 	Base *d = generate();
-	identify(*d);
-	identify(d);
+	identify_from_reference(*d);
+	identify_from_pointer(d);
 	Base *e = generate();
-	identify(*e);
-	identify(e);
+	identify_from_reference(*e);
+	identify_from_pointer(e);
 	Base *f = generate();
-	identify(*f);
-	identify(f);
+	identify_from_reference(*f);
+	identify_from_pointer(f);
 	return 0;
 }
 

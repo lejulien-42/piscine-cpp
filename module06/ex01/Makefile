@@ -6,13 +6,13 @@
 #    By: lejulien <lejulien@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/05 13:10:44 by lejulien          #+#    #+#              #
-#    Updated: 2021/07/09 03:50:52 by lejulien         ###   ########.fr        #
+#    Updated: 2021/07/09 03:50:06 by lejulien         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	 	= ./main.cpp
+SRCS	 	= ./main.cpp ./Data.cpp 
 
-NAME		= convert
+NAME		= a.out
 
 FLAGS		= -Wall -Wextra -Werror -std=c++98
 
