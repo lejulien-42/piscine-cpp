@@ -15,7 +15,7 @@ Base
 {
 	Base *ret;
 	int rand;
-	
+
 	rand = std::rand()%3;
 	switch(rand)
 	{

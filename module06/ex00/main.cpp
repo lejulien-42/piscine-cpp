@@ -62,7 +62,7 @@ int
 	{
 		if (str[i] != 46 && str[i] != 102)
 		{
-			if (str[i] < '0' || str[i] > '9')
+			if ((str[i] != '-' && str[i] != '.' && str[i] < '0') || str[i] > '9')
 				return (1);
 		}
 		i++;

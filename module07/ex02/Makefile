@@ -18,12 +18,20 @@ FLAGS		= -Wall -Wextra -Werror -std=c++98
 
 OBJS		= $(SRCS:.cpp=.o)
 
+UNAME_S = $(shell uname -s)
+ifeq ($(UNAME_S),Linux)
+	COMPILER = g++
+endif
+ifeq ($(UNAME_S),Darwin)
+	COMPILER = clang++
+endif
+
 all:	$(NAME)
 
 .PHONY:	clean fclean re
 
 $(NAME):	$(OBJS)
-	clang++ -o $(NAME) $(FLAGS) $(OBJS)
+	$(COMPILER) -o $(NAME) $(FLAGS) $(OBJS)
 
 clean:
 	rm -f $(OBJS)
@@ -34,4 +42,4 @@ fclean: clean
 re: fclean all
 
 .cpp.o:
-	clang++ $(FLAGS) -c $<  -o $(<:.cpp=.o)
+	$(COMPILER) $(FLAGS) -c $<  -o $(<:.cpp=.o)
