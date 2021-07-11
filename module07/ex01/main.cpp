@@ -4,6 +4,8 @@
 
 #include <iostream>
 #include "iter.hpp"
+#include <string>
+#include "cctype"
 
 void
 	add_two(int &i)
@@ -12,7 +14,7 @@ void
 }
 
 void
-	to_low(char &c)
+	to_upper(char &c)
 {
 	c = c - 32;
 }
@@ -39,11 +41,14 @@ int
 	iter<char>(chars, 3, display);
 	std::cout << std::endl;
 
-	iter<char>(chars, 3, to_low);
+	iter<char>(chars, 3, to_upper);
 
 	std::cout << "this is the new array of chars :";
 	iter<char>(chars, 3, display);
 	std::cout << std::endl << std::endl;
+
+	std::string	s[4] = {"aa", "bb", "cc", "dd"};
+	iter<std::string>(s, 4, display);
 }
 
 //	Made by lejulien@42

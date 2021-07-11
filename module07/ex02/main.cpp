@@ -1,58 +1,54 @@
-//
-//	Made by lejulien
-//
-
-#include "Array.hpp"
 #include <iostream>
-#include <exception>
-#include <string>
+#include <cstdlib>
+#include "Array.hpp"
 
-void
-	print_array_of_char(Array<char> &a, std::string name)
+#define MAX_VAL 750
+int main(int, char**)
 {
-	std::cout << name << " contain : ";
-	for (int i = 0; i < a.size(); i++)
-		std::cout << " " << a[i];
-	std::cout << std::endl;
+    Array<int> numbers(MAX_VAL);
+    int* mirror = new int[MAX_VAL];
+    srand(time(NULL));
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        const int value = rand();
+        numbers[i] = value;
+        mirror[i] = value;
+    }
+    //SCOPE
+    {
+        Array<int> tmp = numbers;
+        Array<int> test(tmp);
+    }
+
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        if (mirror[i] != numbers[i])
+        {
+            std::cerr << "didn't save the same value!!" << std::endl;
+            return 1;
+        }
+    }
+    try
+    {
+        numbers[-2] = 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    try
+    {
+        numbers[MAX_VAL] = 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        numbers[i] = rand();
+    }
+    delete [] mirror;//
+    return 0;
 }
-
-void
-	print_array_of_int(Array<int> &a, std::string name)
-{
-	std::cout << name << " contain : ";
-	for (int i = 0; i < a.size(); i++)
-		std::cout << " " << a[i];
-	std::cout << std::endl;
-}
-
-int
-	main()
-{
-	Array<int> a;
-	Array<char> b(3);
-	Array<char> c;
-	Array<int> d(2);
-
-	try {
-		b[0] = 'l';
-		b[1] = 'e';
-		b[2] = '0';
-		b[3] = '4';
-	}
-	catch (std::exception &e)
-	{
-		std::cout << "Error: " << e.what() << std::endl;
-	}
-	print_array_of_char(b, "b");
-	print_array_of_char(c, "c before assignation of b");
-	c = b;
-	print_array_of_char(c, "c after assignation of b");
-	d[0] = 4;
-	d[1] = 2;
-	print_array_of_int(d, "d");
-	Array<int> e(d);
-	print_array_of_int(e, "constructed by copy d");
-
-}
-
-// Made by lejulien@42

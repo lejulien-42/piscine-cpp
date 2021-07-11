@@ -6,7 +6,7 @@
 #    By: lejulien <lejulien@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/05 13:10:44 by lejulien          #+#    #+#              #
-#    Updated: 2021/07/10 02:22:31 by lejulien         ###   ########.fr        #
+#    Updated: 2021/07/11 03:04:01 by lejulien         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,12 +19,7 @@ FLAGS		= -Wall -Wextra -Werror -std=c++98
 OBJS		= $(SRCS:.cpp=.o)
 
 UNAME_S = $(shell uname -s)
-ifeq ($(UNAME_S),Linux)
-	COMPILER = g++
-endif
-ifeq ($(UNAME_S),Darwin)
-	COMPILER = clang++
-endif
+COMPILER = clang++
 
 all:	$(NAME)
 
