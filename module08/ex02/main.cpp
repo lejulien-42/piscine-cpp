@@ -40,17 +40,17 @@ int main()
 
 	std::list<int> list;
 
-	list.push_back(5);	
-	list.push_back(17);	
+	list.push_front(5);	
+	list.push_front(17);	
 	std::list<int>::iterator i = list.begin();
 	std::cout << *i << std::endl;
-	list.pop_back();
+	list.pop_front();
 	std::cout << list.size() << std::endl;
-	list.push_back(3);	
-	list.push_back(5);	
-	list.push_back(737);	
+	list.push_front(3);	
+	list.push_front(5);	
+	list.push_front(737);	
 	//[...]
-	list.push_back(0);
+	list.push_front(0);
 	std::list<int>::iterator l_it = list.begin();
 	std::list<int>::iterator l_ite = list.end();
 	++l_it;

@@ -18,14 +18,13 @@ class
 		};
 };
 
-template<typename T typename U>
-T<U>::iterator	easyfind(T<U> t, int i)
+template<typename T>
+typename T::iterator	easyfind(T &t, int i)
 {
-	T::iterator it;
-	it = find(t.begin(), t.end(), i);
-	if (it != t.end())
-		return (it);
-	throw notFoutException();
+	typename T::iterator it;
+	it = std::find(t.begin(), t.end(), i);
+	if (it == t.end())
+		throw notFoutException();
 	return (it);
 }
 
