@@ -21,7 +21,6 @@ int main()
 	mstack.push(3);
 	mstack.push(5);
 	mstack.push(737);
-	//[...]
 	mstack.push(0);
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
@@ -32,6 +31,9 @@ int main()
 		std::cout << *it << std::endl;
 		++it;
 	}
+	MutantStack<int>::reverse_iterator rit = mstack.rbegin();
+	rit++;
+	std::cout << *rit << std::endl;
 	std::stack<int> s(mstack);
 
 		// Test for the List (same)
@@ -42,15 +44,13 @@ int main()
 
 	list.push_front(5);	
 	list.push_front(17);	
-	std::list<int>::iterator i = list.begin();
-	std::cout << *i << std::endl;
+	std::cout << *list.begin() << std::endl;
 	list.pop_front();
 	std::cout << list.size() << std::endl;
-	list.push_front(3);	
-	list.push_front(5);	
-	list.push_front(737);	
-	//[...]
-	list.push_front(0);
+	list.push_back(3);	
+	list.push_back(5);	
+	list.push_back(737);	
+	list.push_back(0);
 	std::list<int>::iterator l_it = list.begin();
 	std::list<int>::iterator l_ite = list.end();
 	++l_it;
@@ -60,6 +60,9 @@ int main()
 		std::cout << *l_it << std::endl;
 		++l_it;
 	}
+	std::list<int>::reverse_iterator l_rit = list.rbegin();
+	l_rit++;
+	std::cout << *l_rit << std::endl;
 	std::cout << std::endl;
 
 	return 0;
